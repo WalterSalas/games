@@ -1,3 +1,5 @@
+/* Media Queries Mixin
+**********************/
 /* Reboot Codes - Based on normalize.css v5.0.0
 **********************/
 html {
@@ -478,8 +480,8 @@ body {
   color: #333333;
   font-family: "Lato", sans-serif;
   font-size: 18px;
-  font-size: 1.125em;
-  line-height: 1.6875em;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
 }
 
 main {
@@ -581,6 +583,28 @@ main {
 }
 .estadistica--articulos span {
   margin-left: 10px;
+}
+
+.caja--con-fondo__stats {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  border-top: none;
+  text-align: center;
+}
+.caja--con-fondo__stats ul {
+  display: flex;
+}
+.caja--con-fondo__stats li {
+  display: flex;
+  margin-right: 50px;
+  opacity: 0.8;
+}
+.caja--con-fondo__stats i {
+  color: #FFF;
+}
+.caja--con-fondo__stats span {
+  color: #FFF;
 }
 
 .ubicacion--perfil {
@@ -809,7 +833,7 @@ main {
 .caja--con-fondo img {
   display: block;
   max-width: 100%;
-  height: auto;
+  max-height: auto;
   position: absolute;
   opacity: 0.5;
   object-fit: contain;
@@ -849,8 +873,8 @@ main {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 50px;
-  font-size: 3.125em;
-  line-height: 4.6875em;
+  font-size: 3.125rem;
+  line-height: 4.6875rem;
 }
 .caja--grande .caja--con-fondo__contenido {
   padding-top: 200px;
@@ -925,7 +949,7 @@ main {
 }
 
 .nav--header ul {
-  display: flex;
+  display: none;
   padding-top: 35px;
 }
 .nav--header ul li {
@@ -938,10 +962,15 @@ main {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media only screen and (min-width: 992px) {
+  .nav--header ul {
+    display: flex;
+  }
+}
 
 .header__busqueda {
-  display: flex;
-  margin: auto;
+  display: none;
+  margin-left: auto;
   padding-top: 35px;
 }
 .header__busqueda:hover {
@@ -957,6 +986,11 @@ main {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media only screen and (min-width: 992px) {
+  .header__busqueda {
+    display: flex;
+  }
 }
 
 .footer--principal {
@@ -985,19 +1019,16 @@ main {
 .nav--social {
   margin-left: auto;
 }
-
-ul {
+.nav--social ul {
   display: flex;
   padding-top: 35px;
 }
-
-li {
+.nav--social li {
   list-style: none;
   margin-right: 50px;
   color: #FFF;
 }
-
-a {
+.nav--social a {
   color: #FFF;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
@@ -1005,12 +1036,19 @@ a {
 }
 
 .contenedor--home {
-  height: 1200px;
-  width: 1300px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .contenedor--home {
+    height: 1200px;
+    width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .caja--grande {
@@ -1067,7 +1105,7 @@ a {
   grid-column: 2/3;
 }
 
-.caja-fornite {
+.caja-fortnite {
   -ms-grid-row: 4;
   -ms-grid-row-span: 1;
   grid-row: 4/5;
@@ -1083,4 +1121,65 @@ a {
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
   grid-column: 4/5;
+}
+
+.sidebar--listado {
+  max-width: 300px;
+  padding: 20px;
+  color: #333333;
+  box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+}
+.sidebar--listado h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sidebar--listado ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar--listado li {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+  list-style: none;
+}
+.sidebar--listado a {
+  display: flex;
+  padding: 10px 20px;
+  color: #333333;
+}
+.sidebar--listado__numero {
+  margin-right: 20px;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.banner--homepage {
+  max-width: 300px;
+  padding: 50px;
+  margin-bottom: 20px;
+  background-color: #8841DA;
+  color: #FFF;
+}
+.banner--homepage h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.banner--homepage .button {
+  padding: 10px;
+  height: 50px;
+  border: 2px solid #FFF;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }
